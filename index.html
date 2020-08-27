@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
+</head>
+
+<body>
+    <nav class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h3><a href="./highscore.html">Highscores</a></h3>
+            </div>
+            <div class="col-sm-6">
+                <h1>Questions Game</h1>
+            </div>
+            <div class="col-sm-3">
+                <div>Time: <span id="timer"></span></div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="start-page" class="container main-content">
+        <h2>The Office TV Show Questionaire</h2>
+        <p>This is a 5 question game where you will be asked numerous questions about The Office, an NBC mockumentary
+            sitcom television series.
+            You will have a total of 60 seconds to complete this quiz. If you answer a question wrong, you will be
+            deducted 10 seconds from the remaining
+            time. Once you are done you can input your initials to log your <a href="./highscore.html">Highscore</a>.
+        </p>
+        <button id="start-btn" class="btn btn-outline-primary btn-block" type="button">Start Game</button>
+    </div>
+
+    <div id="question" class="container"></div>
+
+    <div id="highscore"></div>
+
+    <script src="./assets/js/script.js"></script>
+
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JavaScript CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

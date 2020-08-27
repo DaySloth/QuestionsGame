@@ -1,0 +1,22 @@
+nav {
+    margin: 10px;
+}
+a:link {
+    color: #0066da;
+}
+a:hover {
+    text-decoration: none;
+    color: #2e8efb;
+}
+
+.main-content {
+    margin: 50px auto;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
