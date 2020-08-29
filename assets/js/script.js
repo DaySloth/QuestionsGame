@@ -33,13 +33,18 @@ var questionValues = [
         answer: 1,
     },
     {
-        question: "D",
-        buttons: ["Yes", "No", "HELL YEA"],
-        answer: 2,
+        question: "How did Michael propose to Holley?",
+        buttons: ["With Candles", "With Gasoline", "With Food", "By taking her to Jamaica"],
+        answer: 0,
+    },
+    {
+        question: "What is Jan's daughter's name?",
+        buttons: ["Paige", "Ruth", "Hailey", "Astrid"],
+        answer: 3,
     },
 ];
 //question order variables and num variable to be called on to select question
-var questionOrder = [0, 1, 2, 3, "end"];
+var questionOrder = [1, 0, 3, 4, 2, "end"];
 var num;
 //timer variables
 var timerInterval;
