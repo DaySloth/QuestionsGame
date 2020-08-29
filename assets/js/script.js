@@ -63,6 +63,7 @@ function startGame(){
     startElement.setAttribute("class", "hide");
     questionElement.setAttribute("class", "show");
     questionElement.setAttribute("class", "container");
+    selectionDiv.setAttribute ("class", "btn-group-vertical");
     pickQuestion();
     createQuestion(questionValues[num]);
     setTime();
@@ -75,7 +76,8 @@ function createQuestion(index){
         var buttons = document.createElement("button");
         buttons.textContent = index.buttons[i];
         buttons.setAttribute("data-index", i);
-        selectionDiv.appendChild(buttons);
+        buttons.setAttribute("class", "btn btn-outline-dark")
+        selectionDiv.append(buttons);
     }
     selectionDiv.appendChild(messageDiv);
 };
@@ -139,9 +141,9 @@ function endGame(){
     //clears display
     selectionDiv.innerHTML = "";
     //inputs all of the required html
+    h1Tag.textContent = "End Game";
     var h3El = document.createElement("h3");
     h3El.textContent = "Input your name:";
-    h1Tag.textContent = "End Game";
 
     highscoreInput.setAttribute("type", "text");
     highscoreInput.setAttribute("name", "highscore");
@@ -149,9 +151,11 @@ function endGame(){
     highscoreInput.setAttribute("placeholder", "John Doe");
     submitBtn.setAttribute("type", "submit");
     submitBtn.setAttribute("id", "submitBtn");
+    submitBtn.setAttribute("class", "btn btn-info")
     submitBtn.textContent = "Submit";
     scoreEl.textContent = "Your score this round: " + score;
     messageDiv.textContent = "";
+    //adds all elements to the page
     selectionDiv.append(h3El);
     selectionDiv.append(highscoreInput);
     selectionDiv.append(submitBtn);

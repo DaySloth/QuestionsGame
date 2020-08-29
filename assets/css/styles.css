@@ -1,6 +1,11 @@
+body {
+    background-color: lightgrey;
+}
+
 nav {
     margin: 10px;
 }
+
 a:link {
     color: #0066da;
 }
@@ -10,9 +15,21 @@ a:hover {
 }
 
 button {
-    display: block;
-    margin: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
+
+.title-link:link {
+    color: black;
+}
+.title-link:visited {
+    color: black;
+}
+.title-link:hover {
+    color: #0066da;
+}
+
+
 
 .main-content {
     margin: 50px auto;
