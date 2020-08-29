@@ -139,20 +139,24 @@ function endGame(){
     //clears display
     selectionDiv.innerHTML = "";
     //inputs all of the required html
+    var h3El = document.createElement("h3");
+    h3El.textContent = "Input your name:";
     h1Tag.textContent = "End Game";
 
     highscoreInput.setAttribute("type", "text");
     highscoreInput.setAttribute("name", "highscore");
     highscoreInput.setAttribute("id", "highscoreInput");
+    highscoreInput.setAttribute("placeholder", "John Doe");
     submitBtn.setAttribute("type", "submit");
     submitBtn.setAttribute("id", "submitBtn");
     submitBtn.textContent = "Submit";
     scoreEl.textContent = "Your score this round: " + score;
-    
-    selectionDiv.appendChild(highscoreInput);
-    selectionDiv.appendChild(submitBtn);
-    selectionDiv.appendChild(scoreEl);
-    selectionDiv.appendChild(messageDiv);
+    messageDiv.textContent = "";
+    selectionDiv.append(h3El);
+    selectionDiv.append(highscoreInput);
+    selectionDiv.append(submitBtn);
+    selectionDiv.append(scoreEl);
+    selectionDiv.append(messageDiv);
 };
 
 //event listener for the submit button
