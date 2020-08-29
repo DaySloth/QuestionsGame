@@ -1,3 +1,4 @@
+// global variables to be called on
 var startButton = document.querySelector("#start-btn");
 var questionElement = document.querySelector("#question");
 var startElement = document.querySelector("#start-page");
@@ -9,9 +10,12 @@ var timerEl = document.querySelector("#timer");
 var highscoreInput = document.createElement("input");
 var submitBtn = document.createElement("button");
 var scoreEl = document.createElement("h3");
+//scores variables for local storage
+var highscoresList = [];
+var scoresObj;
 
-
-
+console.log(JSON.parse(localStorage.getItem("list")));
+//question objects to choose from
 var questionValues = [
     {
         question: "What is Dwights middle name?",
@@ -34,22 +38,22 @@ var questionValues = [
         answer: 2,
     },
 ];
-
+//question order variables and num variable to be called on to select question
 var questionOrder = [0, 1, 2, 3, "end"];
 var num;
-
+//timer variables
 var timerInterval;
 var secondsLeft = 60;
-
+//score variable for the end score
 var score = 0;
 
 //removes the question from the landing page
 questionElement.setAttribute("class", "hide");
 
-
+//event listener for starting the game
 startButton.addEventListener("click", startGame);
 
-
+//starts game, Hides the landing page and shows the first question
 function startGame(){
     startElement.setAttribute("class", "hide");
     questionElement.setAttribute("class", "show");
@@ -59,6 +63,7 @@ function startGame(){
     setTime();
 };
 
+//creates question using inputs from the script
 function createQuestion(index){
     h1Tag.textContent = index.question;
     for(var i = 0; i < index.buttons.length; i++){
@@ -70,16 +75,18 @@ function createQuestion(index){
     selectionDiv.appendChild(messageDiv);
 };
 
+//message display for errors/success messages
 function displayMessage(type, message) {
     messageDiv.textContent = message;
     messageDiv.setAttribute("class", type);
 }
 
-
+//listener if you are clicking an answer button
 selectionDiv.addEventListener("click", function(){
     var element = event.target;
 
     if (element.matches("button")){
+        //adds data-index for answer checking
         var index = element.getAttribute("data-index");
         if(index == questionValues[num].answer){
             displayMessage("success", "Correct");
@@ -90,20 +97,23 @@ selectionDiv.addEventListener("click", function(){
             secondsLeft = secondsLeft - 10;
         }
         selectionDiv.innerHTML = "";
+        //picks a question
         pickQuestion();
-        console.log("num= "+ num)
+        //uses that picked question for the next question to pop up
         createQuestion(questionValues[num]);
     }
 });
 
+//picks out the questions from the array
 function pickQuestion(){
+    //selects question index and deletes from array
     num = questionOrder.shift();
     if (num == "end"){
         endGame();
     }
-    console.log(questionOrder);
 };
 
+//sets the timer for game
 function setTime(){
         timerInterval = setInterval(function(){
         secondsLeft--;
@@ -111,15 +121,19 @@ function setTime(){
 
         if(secondsLeft === 0) {
             clearInterval(timerInterval);
-            alert("You have failed the test")
+            alert("You have ran out of time");
             endGame();
         }
     }, 1000);
 }
 
+//runs the end game function
 function endGame(){
+    //stops timer
     clearInterval(timerInterval);
+    //clears display
     selectionDiv.innerHTML = "";
+    //inputs all of the required html
     h1Tag.textContent = "End Game";
 
     highscoreInput.setAttribute("type", "text");
@@ -136,20 +150,41 @@ function endGame(){
     selectionDiv.appendChild(messageDiv);
 };
 
+//event listener for the submit button
 selectionDiv.addEventListener("click", function(){
     var element = event.target;
-
+    //checks if you are targeting a button
     if (element.matches("button")){
+        //makes sure it is the submit button before doing any actions
         var id = element.getAttribute("id");
         if(id == "submitBtn"){
+            //makes sure the users input is in
             if(highscoreInput.value == ""){
+                //displays an error if there is no input
                 displayMessage("error", "Name Cannot be Blank");
             } else {
-                localStorage.setItem("name", highscoreInput.value);
-                localStorage.setItem("score", score);
-                localStorage.setItem("timeRemaining", secondsLeft);
+                //stores the users scores
+                scoresObj = {
+                    name: highscoreInput.value,
+                    score: score,
+                    timeRemaining: secondsLeft,
+                };
                 displayMessage("success", "Info Saved");
+                storeScore();
             }
         }
     }
 });
+
+//setting scores to be saved in local storage
+function storeScore(){
+    //grabs list in the storage
+    highscoresList = JSON.parse(localStorage.getItem("list"));
+    //pushes the new users scores to the array
+    highscoresList.push(scoresObj);
+    //sets the array back into local storage
+    localStorage.setItem("list", JSON.stringify(highscoresList));
+}
+
+
+
