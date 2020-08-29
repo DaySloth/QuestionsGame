@@ -9,6 +9,11 @@ a:hover {
     color: #2e8efb;
 }
 
+button {
+    display: block;
+    margin: 20px;
+}
+
 .main-content {
     margin: 50px auto;
 }
@@ -19,4 +24,24 @@ a:hover {
 
 .show {
     display: block;
+}
+
+#msg {
+    visibility: hidden;
+    margin-top: 20px;
+    font-weight: 700;
+    height: 1.2em;
+    font-size: 1.2em;
+}
+
+#msg.success, #msg.error {
+    visibility: visible;
+}
+
+#msg.success {
+    color: #52b155;
+}
+
+#msg.error {
+    color: #e6252c;
 }
