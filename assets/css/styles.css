@@ -1,9 +1,24 @@
+/* fonts
+
+font-family: 'Baloo 2', cursive;
+font-family: 'Nunito', sans-serif;
+font-family: 'Oswald', sans-serif;
+
+*/
+
+
+
+
+
+
 body {
-    background-color: lightgrey;
+    background: url('https://wallpaperaccess.com/full/1146179.jpg') center center no-repeat;
+    font-family: 'Nunito', sans-serif;
 }
 
 nav {
     margin: 10px;
+    font-family: 'Oswald', sans-serif;
 }
 
 a:link {
@@ -19,6 +34,10 @@ button {
     margin-top: 20px;
 }
 
+.title-link{
+    font-family: 'Baloo 2', cursive;
+}
+
 .title-link:link {
     color: black;
 }
@@ -29,7 +48,16 @@ button {
     color: #0066da;
 }
 
+#container {
+    background-color: #f7f7f7d0;
+    padding: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+}
 
+.timer {
+    font-size: 25px;
+}
 
 .main-content {
     margin: 50px auto;

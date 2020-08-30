@@ -2,43 +2,47 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Questions Game</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&family=Nunito:wght@300&family=Oswald&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
 </head>
 
 <body>
-    <nav class="container">
-        <div class="row">
-            <div class="col-sm-3">
-                <h4><a href="./highscore.html">Highscores</a></h4>
+    <div id="container" class="container">
+        <nav class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h4><a href="./highscore.html">Highscores</a></h4>
+                </div>
+                <div class="col-sm-6">
+                    <h1><a class="title-link" href="./index.html">Questions Game</a></h1>
+                </div>
+                <div class="col-sm-3">
+                    <div class="timer">Time: <span id="timer"></span></div>
+                </div>
             </div>
-            <div class="col-sm-6">
-                <h1><a class="title-link" href="./index.html">Questions Game</a></h1>
-            </div>
-            <div class="col-sm-3">
-                <div>Time: <span id="timer"></span></div>
-            </div>
+        </nav>
+
+
+        <div id="start-page" class="container main-content">
+            <h2>The Office TV Show Questionaire</h2>
+            <p>This is a 5 question game where you will be asked numerous questions about The Office, an NBC mockumentary
+                sitcom television series.
+                You will have a total of 60 seconds to complete this quiz. If you answer a question wrong, you will be
+                deducted 10 seconds from the remaining
+                time. Once you are done you can input your initials to log your <a href="./highscore.html">Highscore</a>.
+            </p>
+            <button id="start-btn" class="btn btn-outline-primary btn-block" type="button">Start Game</button>
         </div>
-    </nav>
 
-
-    <div id="start-page" class="container main-content">
-        <h2>The Office TV Show Questionaire</h2>
-        <p>This is a 5 question game where you will be asked numerous questions about The Office, an NBC mockumentary
-            sitcom television series.
-            You will have a total of 60 seconds to complete this quiz. If you answer a question wrong, you will be
-            deducted 10 seconds from the remaining
-            time. Once you are done you can input your initials to log your <a href="./highscore.html">Highscore</a>.
-        </p>
-        <button id="start-btn" class="btn btn-outline-primary btn-block" type="button">Start Game</button>
-    </div>
-
-    <div id="question" class="container">
-        <h1 id="h1Tag"></h1>
-        <div id="selectionDiv" class="container"></div>
+        <div id="question" class="container">
+            <h1 id="h1Tag"></h1>
+            <div id="selectionDiv" class="container"></div>
+        </div>
     </div>
 
     <script src="./assets/js/script.js"></script>
