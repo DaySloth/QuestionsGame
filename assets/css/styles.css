@@ -6,32 +6,16 @@ font-family: 'Oswald', sans-serif;
 
 */
 
-
-
-
-
-
+/* Main Body Styling */
 body {
     background: url('https://wallpaperaccess.com/full/1146179.jpg') center center no-repeat;
     font-family: 'Nunito', sans-serif;
 }
 
+/* Navagation Bar styling */
 nav {
     margin: 10px;
     font-family: 'Oswald', sans-serif;
-}
-
-a:link {
-    color: #0066da;
-}
-a:hover {
-    text-decoration: none;
-    color: #2e8efb;
-}
-
-button {
-    margin-bottom: 20px;
-    margin-top: 20px;
 }
 
 .title-link{
@@ -48,15 +32,26 @@ button {
     color: #0066da;
 }
 
+a:link {
+    color: #0066da;
+}
+a:hover {
+    text-decoration: none;
+    color: #2e8efb;
+}
+
+/* Question Button Styling */
+
+button {
+    width: auto;
+    margin: 20px auto;
+}
+
 #container {
     background-color: #f7f7f7d0;
     padding: 20px;
     font-weight: bold;
     border-radius: 20px;
-}
-
-.timer {
-    font-size: 25px;
 }
 
 .main-content {
@@ -70,6 +65,7 @@ button {
 .show {
     display: block;
 }
+/* Message Div styling for error/success messages */
 
 #msg {
     visibility: hidden;
@@ -91,6 +87,39 @@ button {
     color: #e6252c;
 }
 
-.score-card{
-    background-color: darkgrey;
+/* Timer styling */
+
+.timer {
+    font-size: 25px;
+}
+
+#timer {
+    font-size: 40px;
+}
+
+.green-time {
+    color: #00ce00;
+}
+
+.red-time {
+    color: red;
+}
+
+.blinking{
+    animation:blinkingText 1s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: red;    }
+    49%{    color: red; }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: red;    }
+}
+
+#highscoresDiv {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #f7f7f7d0;
+    padding: 20px;
+    border-radius: 20px;
 }

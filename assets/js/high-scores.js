@@ -1,19 +1,22 @@
+// Setting Global variables to be called
 var highscoresDiv = document.getElementById("highscoresDiv");
 var newScore = document.createElement("div");
 var scoreCard = document.createElement("div");
 scoreCard.setAttribute("class", "score-card");
-
+//empty array to input local storage objects
 var scoreList = [];
-
+//running function on site to load in the scores
 renderScores();
 
 
 
 function renderScores(){
+    //grabs scores from storage and inputs to the array
     var storedScores = JSON.parse(localStorage.getItem("list"));
     scoreList = storedScores;
     highscoresDiv.innerHTML = "";
 
+    // runs through the array that was just filled and inputs scores to the screen
     for (var i = 0; i < scoreList.length; i++){
         var userName = document.createElement("h5");
         var userScore = document.createElement("p");

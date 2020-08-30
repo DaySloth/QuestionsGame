@@ -124,6 +124,15 @@ function setTime(){
         secondsLeft--;
         timerEl.textContent = secondsLeft;
 
+        if(secondsLeft > 30){
+            timerEl.setAttribute("class", "green-time");
+        } else if(secondsLeft < 15) {
+            timerEl.setAttribute("class", "red-time blinking");
+        } else {
+            timerEl.setAttribute("class", "red-time");
+        }
+
+
         if(secondsLeft === 0) {
             clearInterval(timerInterval);
             alert("You have ran out of time");
