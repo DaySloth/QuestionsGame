@@ -16,11 +16,13 @@ function renderScores(){
     console.log(storedScores);
     scoreList = storedScores;
     highscoresDiv.innerHTML = "";
-
+    //checks if user has stored scores
     if(storedScores === null){
+        // if not then it will display no scores
         var noScores = document.createElement("h5");
         noScores.textContent = "No Scores Stored";
         highscoresDiv.appendChild(noScores);
+    // if they do have scores it will run a for loop
     } else {
         // runs through the array that was just filled and inputs scores to the screen
         for (var i = 0; i < scoreList.length; i++){
