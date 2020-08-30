@@ -1,8 +1,8 @@
 # Questions Game
 
-[Go To Site](./assets/img/Capture.PNG)
+[Go To Site](https://daysloth.github.io/QuestionsGame/)
 
-![Questions Game](https://i.imgur.com/UGAQQ7P.png)
+![Questions Game](./assets/img/Capture.PNG)
 
 ## Description 
 

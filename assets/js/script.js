@@ -2,7 +2,7 @@
 var startButton = document.querySelector("#start-btn");
 var questionElement = document.querySelector("#question");
 var startElement = document.querySelector("#start-page");
-var h1Tag = document.querySelector("#h1Tag");
+var h2Tag = document.querySelector("#h2Tag");
 var selectionDiv = document.querySelector("#selectionDiv");
 var messageDiv = document.createElement("div");
 messageDiv.setAttribute("id", "msg");
@@ -69,7 +69,7 @@ function startGame(){
 
 //creates question using inputs from the script
 function createQuestion(index){
-    h1Tag.textContent = index.question;
+    h2Tag.textContent = index.question;
     for(var i = 0; i < index.buttons.length; i++){
         var buttons = document.createElement("button");
         buttons.textContent = index.buttons[i];
@@ -148,7 +148,7 @@ function endGame(){
     //clears display
     selectionDiv.innerHTML = "";
     //inputs all of the required html
-    h1Tag.textContent = "End Game";
+    h2Tag.textContent = "End Game";
     var h3El = document.createElement("h3");
     h3El.textContent = "Input your name:";
 
