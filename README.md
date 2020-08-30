@@ -2,12 +2,15 @@
 
 [Go To Site](https://daysloth.github.io/QuestionsGame/)
 
-![password generator](https://i.imgur.com/EtKwdzg.png)
+![Questions Game](https://i.imgur.com/UGAQQ7P.png)
 
 ## Description 
 
-This project was built for a company to use for generating a secure password. The generator takes in user inputs to determine how complex to make the password. Inputs taken in are
-as follows: length of password, if the user wants lowercase characters, uppercase, numbers or special characters. It will then generate a password matching this criteria and output to the text area. I also added in an option for copy to clipboard to make sure they don't misspell the password given. I have also removed certain characters to clear up any confusion. Things like a lowercase 'l', an uppercase 'I', as well as the pipe '|' since these can be confusing with certain fonts. Also the uppercase letter 'O' has been removed.
+This project was built as a simple 5 questions game. The app utilizes local storage and JavaScript to dynamically update the HTML elements on the page. The highscores will be locally saved and updated after every quiz attempt.
+
+## Testing
+
+There are explainations on the landing page. You have 60 seconds to complete the quiz. There is no winning score, try to get as many correct as possible, then input your name and save your high score. You can view your highscores by selecting the highscores links. If you answer a question wrong you will be deducted 10 seconds off the clock so be careful.
 
 ## Credits
 
