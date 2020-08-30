@@ -13,8 +13,6 @@ var scoreEl = document.createElement("h3");
 //scores variables for local storage
 var highscoresList = [];
 var scoresObj;
-
-console.log(JSON.parse(localStorage.getItem("list")));
 //question objects to choose from
 var questionValues = [
     {
@@ -192,11 +190,17 @@ selectionDiv.addEventListener("click", function(){
 //setting scores to be saved in local storage
 function storeScore(){
     //grabs list in the storage
-    highscoresList = JSON.parse(localStorage.getItem("list"));
-    //pushes the new users scores to the array
-    highscoresList.push(scoresObj);
+    if(JSON.parse(localStorage.getItem("list")) == null){
+        highscoresList.push(scoresObj);
+    } else {
+        highscoresList = JSON.parse(localStorage.getItem("list"));
+        console.log(highscoresList);
+        //pushes the new users scores to the array
+        highscoresList.push(scoresObj);
+    }
     //sets the array back into local storage
     localStorage.setItem("list", JSON.stringify(highscoresList));
+    console.log(highscoresList);
 }
 
 
