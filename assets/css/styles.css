@@ -62,3 +62,7 @@ button {
 #msg.error {
     color: #e6252c;
 }
+
+.score-card{
+    background-color: darkgrey;
+}

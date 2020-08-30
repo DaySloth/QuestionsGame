@@ -1,5 +1,7 @@
 var highscoresDiv = document.getElementById("highscoresDiv");
 var newScore = document.createElement("div");
+var scoreCard = document.createElement("div");
+scoreCard.setAttribute("class", "score-card");
 
 var scoreList = [];
 
@@ -20,7 +22,6 @@ function renderScores(){
         var name = scoreList[i].name;
         var score = scoreList[i].score;
         var timeRemaining = scoreList[i].timeRemaining;
-        highscoresDiv.appendChild(newScore);
         userName.textContent = "User: " + name;
         userScore.textContent = "Score: " + score;
         timeRemain.textContent = "Time Remaining: " + timeRemaining;
@@ -28,5 +29,6 @@ function renderScores(){
         newScore.appendChild(userScore);
         newScore.appendChild(timeRemain);
         newScore.appendChild(document.createElement("hr"));
+        highscoresDiv.appendChild(newScore);
     }
 }
